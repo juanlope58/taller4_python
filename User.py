@@ -2,7 +2,7 @@ import DoubleList as dl
 import Song as s
 
 class User():
-    def __init__(self, username=""):
+    def __init__(self, username):
         self.__username = username
         self.__userSongList = dl.DoubleList
         
@@ -21,8 +21,9 @@ class User():
         
     # def playList():
     
-    # def toString():
-    #     return String
+    
+    def __str__(self):
+        return self.__username
         
     
         

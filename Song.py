@@ -1,5 +1,5 @@
 class Song():
-    def __init__(self, code="", name="", artist="", album="", year=0):
+    def __init__(self, code="", artist="", name="", album="", year=0):
         self.__code = code
         self.__name = name
         self.__artist = artist
@@ -36,3 +36,5 @@ class Song():
     def setYear(self, year):
         self.__year = year
     
+    def __str__(self):
+        return ("Reproduciendo: "+self.__name+" - "+self.__artist)
