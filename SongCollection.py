@@ -8,10 +8,29 @@ class SongCollection():
     def add(self, s):
         self.__songs.addLast(s)
         
-    # def find(name):
-    #     return DoubleNode
+    def find(self, name):
+        temp = self.__songs.first()
+        while temp != None and temp.data.getName() != name :
+            temp=temp.next
+        if temp==None:
+            return None
+        else:
+            return temp 
     
-    # def remove(self, name, userList):
+    def remove(self, name, userList):
+        cancion=self.find(name)
+        temp=userList.getUsers().first()
+        if cancion==None:
+            print("No se eliminó la canción")
+        else:
+            print("Eliminada: ", end="")
+            print(self.__songs.remove(cancion))
+            while temp!= None:
+                temp.data.removeSong(name)
+                temp=temp.next
         
     def play(self):
-        self.__songs.print()
+        temp=self.__songs.first()
+        while temp != None:
+            print("Reproduciendo: "+ temp.data.getName() + " - " + temp.data.getArtist())
+            temp=temp.next

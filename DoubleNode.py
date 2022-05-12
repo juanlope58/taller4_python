@@ -1,6 +1,6 @@
 class DoubleNode():
     def __init__(self, d=None):
-        self.__data=d
+        self.__data = d
         self.__prev=None
         self.__next=None
     

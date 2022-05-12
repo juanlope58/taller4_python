@@ -1,4 +1,7 @@
 import DoubleList as dl
+import SongCollection as sc
+import User as u
+import Song as s
 
 class UserCollection():
     def __init__(self):
@@ -29,9 +32,22 @@ class UserCollection():
         else:
             return None
     
-    # def addUserSong(self, username, songName, songList):
+    def addUserSong(self, username, songName, songList): 
+        usuario=self.find(username)
+        cancion=songList.find(songName)
+        if usuario== None:
+            print("Error: El usuario no existe")
+        elif cancion==None:
+            print("Error: La canción no existe")
+        else:
+            usuario.data.addSong(cancion.data)
+            return
         
-    # def playUserList(username):
+    def playUserList(self, username):
+        usuario=self.find(username)
+        if usuario!=None:
+            usuario.data.playList()
+             
         
     def print(self):
         self.__users.print()

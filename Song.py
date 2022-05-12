@@ -37,4 +37,4 @@ class Song():
         self.__year = year
     
     def __str__(self):
-        return ("Reproduciendo: "+self.__name+" - "+self.__artist)
+        return (self.__code+ " " +self.__artist+" "+self.__name+" "+" "+self.__album+" "+str(self.__year))
